@@ -1,0 +1,1338 @@
+{
+  "id": "9ae6082b-c7f4-433c-9971-7a8f65a3ea65",
+  "revision": 0,
+  "last_node_id": 137,
+  "last_link_id": 173,
+  "nodes": [
+    {
+      "id": 70,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        460,
+        1240
+      ],
+      "size": [
+        310,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 137
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            124
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        3
+      ],
+      "widgets_values_named": {
+        "shift": 3
+      }
+    },
+    {
+      "id": 64,
+      "type": "ConditioningZeroOut",
+      "pos": [
+        460,
+        1270
+      ],
+      "size": [
+        210,
+        30
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 69
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            125
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "ConditioningZeroOut",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      }
+    },
+    {
+      "id": 62,
+      "type": "CLIPLoader",
+      "pos": [
+        -500,
+        1970
+      ],
+      "size": [
+        270,
+        110
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen_3_4b.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors",
+            "directory": "text_encoders"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "qwen_3_4b.safetensors",
+        "lumina2",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen_3_4b.safetensors",
+        "type": "lumina2",
+        "device": "default"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 91,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        -200,
+        1970
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            137
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "795e45156ece99afbc3efef911e63fcb46e6a20d",
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "z_image_turbo-bf16.gguf"
+      ],
+      "widgets_values_named": {
+        "unet_name": "z_image_turbo-bf16.gguf"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 65,
+      "type": "VAEDecode",
+      "pos": [
+        550,
+        1240
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 129
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 72
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            160,
+            161
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "VAEDecode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      }
+    },
+    {
+      "id": 63,
+      "type": "VAELoader",
+      "pos": [
+        90,
+        1970
+      ],
+      "size": [
+        270,
+        60
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            72
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "ae.safetensors",
+            "url": "https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/vae/ae.safetensors",
+            "directory": "vae"
+          }
+        ],
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "ae.safetensors"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 112,
+      "type": "easy showAnything",
+      "pos": [
+        -60,
+        1290
+      ],
+      "size": [
+        410,
+        260
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 167
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.6",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        [
+          "Picture of a green frog in a tree"
+        ]
+      ],
+      "widgets_values_named": {
+        "text": [
+          "Picture of a green frog in a tree"
+        ]
+      }
+    },
+    {
+      "id": 67,
+      "type": "CLIPTextEncode",
+      "pos": [
+        -60,
+        1240
+      ],
+      "size": [
+        410,
+        190
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 77
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 168
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            69,
+            126
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.73",
+        "Node name for S&R": "CLIPTextEncode",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        "Portrait of a woman wearing a wool cardigan. She has ginger, wavy hair."
+      ],
+      "widgets_values_named": {
+        "text": "Portrait of a woman wearing a wool cardigan. She has ginger, wavy hair."
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 101,
+      "type": "KSampler",
+      "pos": [
+        430,
+        1240
+      ],
+      "size": [
+        330,
+        690
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 124
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 126
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 125
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 127
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            129
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        539230065711431,
+        "randomize",
+        9,
+        1,
+        "dpmpp_2m_sde",
+        "beta57",
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 539230065711431,
+        "control_after_generate": "randomize",
+        "steps": 9,
+        "cfg": 1,
+        "sampler_name": "dpmpp_2m_sde",
+        "scheduler": "beta57",
+        "denoise": 1
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 126,
+      "type": "Note",
+      "pos": [
+        -1050,
+        1230
+      ],
+      "size": [
+        500,
+        340
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Use wildcard1, wildcard2, or wildcard3 to replace text in the prompt.\n- Wildcards need to be separated by commas.\n- Wildcard folder should point to a folder with a wildcar1.txt, wildcar2.txt and wildcar3.txt files; it overrides text inputs below. Or use the \"Bloom Wildcard\" node to load individual text files.\n-Use counter set to the same value as the Run batch number.\n-Set \"Exhaustive\" to true, counter and Run batch to the Total Combinations number to generate every possible combination of prompts with the given wildcards."
+      ],
+      "widgets_values_named": {
+        "text": "Use wildcard1, wildcard2, or wildcard3 to replace text in the prompt.\n- Wildcards need to be separated by commas.\n- Wildcard folder should point to a folder with a wildcar1.txt, wildcar2.txt and wildcar3.txt files; it overrides text inputs below. Or use the \"Bloom Wildcard\" node to load individual text files.\n-Use counter set to the same value as the Run batch number.\n-Set \"Exhaustive\" to true, counter and Run batch to the Total Combinations number to generate every possible combination of prompts with the given wildcards."
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 131,
+      "type": "HandyToolCounter",
+      "pos": [
+        -70,
+        1620
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "index",
+          "type": "INT",
+          "links": [
+            166
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HandyToolCounter"
+      },
+      "widgets_values": [
+        12
+      ],
+      "widgets_values_named": {
+        "max_index": 12
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 133,
+      "type": "HandyToolDynamicPrompt",
+      "pos": [
+        -500,
+        1250
+      ],
+      "size": [
+        390,
+        590
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "INT",
+          "widget": {
+            "name": "index"
+          },
+          "link": 166
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            167,
+            168
+          ]
+        },
+        {
+          "name": "wildcard1",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "wildcard2",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "wildcard3",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "current_index",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "total_combinations",
+          "type": "INT",
+          "links": [
+            169
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HandyToolDynamicPrompt"
+      },
+      "widgets_values": [
+        "Picture of a wildcard1 wildcard2 in a wildcard3",
+        0,
+        true,
+        "",
+        "green, red, yellow",
+        "",
+        "random",
+        "frog, bird",
+        "",
+        "random",
+        "tree, pond",
+        "",
+        "random"
+      ],
+      "widgets_values_named": {
+        "base_prompt": "Picture of a wildcard1 wildcard2 in a wildcard3",
+        "index": 0,
+        "exhaustive": true,
+        "wildcard_folder": "",
+        "wildcard1_text": "green, red, yellow",
+        "wildcard1_file": "",
+        "wildcard1_mode": "random",
+        "wildcard2_text": "frog, bird",
+        "wildcard2_file": "",
+        "wildcard2_mode": "random",
+        "wildcard3_text": "tree, pond",
+        "wildcard3_file": "",
+        "wildcard3_mode": "random"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 136,
+      "type": "HandyToolWildcard",
+      "pos": [
+        -490,
+        2830
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "wildcard",
+          "type": "STRING",
+          "links": [
+            172
+          ]
+        },
+        {
+          "name": "total_items",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "current_index",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HandyToolWildcard"
+      },
+      "widgets_values": [
+        "sequential",
+        0,
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "mode": "sequential",
+        "index": 0,
+        "text_input": "",
+        "file_path": ""
+      }
+    },
+    {
+      "id": 135,
+      "type": "HandyToolWildcard",
+      "pos": [
+        -490,
+        2580
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "wildcard",
+          "type": "STRING",
+          "links": [
+            171
+          ]
+        },
+        {
+          "name": "total_items",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "current_index",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HandyToolWildcard"
+      },
+      "widgets_values": [
+        "sequential",
+        0,
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "mode": "sequential",
+        "index": 0,
+        "text_input": "",
+        "file_path": ""
+      }
+    },
+    {
+      "id": 137,
+      "type": "HandyToolCounter",
+      "pos": [
+        -300,
+        2210
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "index",
+          "type": "INT",
+          "links": [
+            173
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HandyToolCounter"
+      },
+      "widgets_values": [
+        12
+      ],
+      "widgets_values_named": {
+        "max_index": 12
+      }
+    },
+    {
+      "id": 132,
+      "type": "HandyToolWildcard",
+      "pos": [
+        -490,
+        2330
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "wildcard",
+          "type": "STRING",
+          "links": [
+            170
+          ]
+        },
+        {
+          "name": "total_items",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "current_index",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HandyToolWildcard"
+      },
+      "widgets_values": [
+        "sequential",
+        0,
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "mode": "sequential",
+        "index": 0,
+        "text_input": "",
+        "file_path": ""
+      }
+    },
+    {
+      "id": 134,
+      "type": "HandyToolTextConcat",
+      "pos": [
+        -30,
+        2330
+      ],
+      "size": [
+        300,
+        330
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "INT",
+          "widget": {
+            "name": "index"
+          },
+          "link": 173
+        },
+        {
+          "name": "wildcard1",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "wildcard1"
+          },
+          "link": 170
+        },
+        {
+          "name": "wildcard2",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "wildcard2"
+          },
+          "link": 171
+        },
+        {
+          "name": "wildcard3",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "wildcard3"
+          },
+          "link": 172
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "current_index",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HandyToolTextConcat"
+      },
+      "widgets_values": [
+        "Picture of a wildcard1 on a wildcard2 painted in wildcard3",
+        0,
+        "",
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "base_prompt": "Picture of a wildcard1 on a wildcard2 painted in wildcard3",
+        "index": 0,
+        "wildcard1": "",
+        "wildcard2": "",
+        "wildcard3": ""
+      }
+    },
+    {
+      "id": 124,
+      "type": "Image Save",
+      "pos": [
+        830,
+        1230
+      ],
+      "size": [
+        290,
+        420
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 160
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "files",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "was-ns",
+        "ver": "3.0.1",
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "save_path",
+        "DynamicPrompt_",
+        "_",
+        4,
+        "false",
+        "png",
+        300,
+        100,
+        "true",
+        "false",
+        "false",
+        "false",
+        "true",
+        "true",
+        "true"
+      ],
+      "widgets_values_named": {
+        "output_path": "save_path",
+        "filename_prefix": "DynamicPrompt_",
+        "filename_delimiter": "_",
+        "filename_number_padding": 4,
+        "filename_number_start": "false",
+        "extension": "png",
+        "dpi": 300,
+        "quality": 100,
+        "optimize_image": "true",
+        "lossless_webp": "false",
+        "overwrite_mode": "false",
+        "show_history": "false",
+        "show_history_by_prefix": "true",
+        "embed_workflow": "true",
+        "show_previews": "true"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 125,
+      "type": "PreviewImage",
+      "pos": [
+        830,
+        1700
+      ],
+      "size": [
+        320,
+        420
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 161
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.16.3",
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 114,
+      "type": "easy showAnything",
+      "pos": [
+        160,
+        1610
+      ],
+      "size": [
+        210,
+        90
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 169
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Total Combinations",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.3.6",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        [
+          "12"
+        ]
+      ],
+      "widgets_values_named": {
+        "text": [
+          "12"
+        ]
+      }
+    },
+    {
+      "id": 68,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        -70,
+        1740
+      ],
+      "size": [
+        210,
+        110
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            127
+          ]
+        }
+      ],
+      "title": "Image size",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.64",
+        "Node name for S&R": "EmptySD3LatentImage",
+        "enableTabs": false,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "hasSecondTab": false,
+        "secondTabText": "Send Back",
+        "secondTabOffset": 80,
+        "secondTabWidth": 65
+      },
+      "widgets_values": [
+        768,
+        1024,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 768,
+        "height": 1024,
+        "batch_size": 1
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [
+      69,
+      67,
+      0,
+      64,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      72,
+      63,
+      0,
+      65,
+      1,
+      "VAE"
+    ],
+    [
+      77,
+      62,
+      0,
+      67,
+      0,
+      "CLIP"
+    ],
+    [
+      124,
+      70,
+      0,
+      101,
+      0,
+      "MODEL"
+    ],
+    [
+      125,
+      64,
+      0,
+      101,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      126,
+      67,
+      0,
+      101,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      127,
+      68,
+      0,
+      101,
+      3,
+      "LATENT"
+    ],
+    [
+      129,
+      101,
+      0,
+      65,
+      0,
+      "LATENT"
+    ],
+    [
+      137,
+      91,
+      0,
+      70,
+      0,
+      "MODEL"
+    ],
+    [
+      160,
+      65,
+      0,
+      124,
+      0,
+      "IMAGE"
+    ],
+    [
+      161,
+      65,
+      0,
+      125,
+      0,
+      "IMAGE"
+    ],
+    [
+      166,
+      131,
+      0,
+      133,
+      0,
+      "INT"
+    ],
+    [
+      167,
+      133,
+      0,
+      112,
+      0,
+      "STRING"
+    ],
+    [
+      168,
+      133,
+      0,
+      67,
+      1,
+      "STRING"
+    ],
+    [
+      169,
+      133,
+      5,
+      114,
+      0,
+      "INT"
+    ],
+    [
+      170,
+      132,
+      0,
+      134,
+      1,
+      "STRING"
+    ],
+    [
+      171,
+      135,
+      0,
+      134,
+      2,
+      "STRING"
+    ],
+    [
+      172,
+      136,
+      0,
+      134,
+      3,
+      "STRING"
+    ],
+    [
+      173,
+      137,
+      0,
+      134,
+      0,
+      "INT"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 3,
+      "title": "Input and Prompt",
+      "bounding": [
+        -530,
+        1160,
+        910,
+        710
+      ],
+      "color": "#8A8",
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Models",
+      "bounding": [
+        -520,
+        1890,
+        900,
+        200
+      ],
+      "color": "#88A",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Generate",
+      "bounding": [
+        400,
+        1160,
+        390,
+        930
+      ],
+      "color": "#b58b2a",
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "Alternative wildcard use",
+      "bounding": [
+        -520,
+        2130,
+        870,
+        930
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7972024500000222,
+      "offset": [
+        1421.9270333258157,
+        -1001.6956545245456
+      ]
+    },
+    "frontendVersion": "1.49.6",
+    "workflowRendererVersion": "LG",
+    "VHS_latentpreview": true,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": false
+  },
+  "version": 0.4
+}

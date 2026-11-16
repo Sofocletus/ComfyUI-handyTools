@@ -1,0 +1,158 @@
+{
+    "Film Look": {
+        "opacity": 1,
+        "contrast": 1.1,
+        "saturation": 0.9,
+        "brightness": 1,
+        "tint": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "shadows": {
+            "r": 0.95,
+            "g": 0.98,
+            "b": 1.05
+        },
+        "midtones": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "highlights": {
+            "r": 1.05,
+            "g": 1,
+            "b": 0.95
+        }
+    },
+    "Vibrant": {
+        "opacity": 1,
+        "contrast": 1.2,
+        "saturation": 1.4,
+        "brightness": 1.05,
+        "tint": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "shadows": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "midtones": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "highlights": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        }
+    },
+    "Vintage": {
+        "opacity": 1,
+        "contrast": 0.85,
+        "saturation": 0.65,
+        "brightness": 1.1,
+        "tint": {
+            "r": 1.1,
+            "g": 1.05,
+            "b": 0.9
+        },
+        "shadows": {
+            "r": 1.1,
+            "g": 1,
+            "b": 0.9
+        },
+        "midtones": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "highlights": {
+            "r": 1,
+            "g": 0.95,
+            "b": 0.9
+        }
+    },
+    "Teal & Orange": {
+        "opacity": 1,
+        "contrast": 1.15,
+        "saturation": 1.1,
+        "brightness": 1,
+        "tint": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "shadows": {
+            "r": 0.9,
+            "g": 1,
+            "b": 1.15
+        },
+        "midtones": {
+            "r": 1.05,
+            "g": 1,
+            "b": 0.95
+        },
+        "highlights": {
+            "r": 1.15,
+            "g": 1.05,
+            "b": 0.9
+        }
+    },
+    "B&W High Contrast": {
+        "opacity": 1,
+        "contrast": 1.4,
+        "saturation": 0,
+        "brightness": 1,
+        "tint": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "shadows": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "midtones": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        },
+        "highlights": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+        }
+    },
+    "Cool Muted": {
+        "opacity": 1,
+        "contrast": 0.95,
+        "saturation": 0.75,
+        "brightness": 1,
+        "tint": {
+            "r": 0.9,
+            "g": 0.95,
+            "b": 1.1
+        },
+        "shadows": {
+            "r": 0.95,
+            "g": 0.95,
+            "b": 1.05
+        },
+        "midtones": {
+            "r": 0.95,
+            "g": 0.95,
+            "b": 1.05
+        },
+        "highlights": {
+            "r": 0.95,
+            "g": 1,
+            "b": 1.05
+        }
+    }
+}

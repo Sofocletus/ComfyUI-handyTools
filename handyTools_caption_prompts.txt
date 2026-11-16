@@ -1,0 +1,76 @@
+================================================================================
+                       CAPTION PROMPTS - USER GUIDE
+================================================================================
+
+OVERVIEW
+The Caption Prompts node dynamically generates highly structured, objective 
+system instructions for Vision-Language Models (like Gemma-3, Florence-2, or JoyCaption) 
+inside ComfyUI. It is specifically designed to create pristine, hallucination-free 
+datasets for training diffusion models and LoRAs.
+
+--------------------------------------------------------------------------------
+NODE INPUTS
+--------------------------------------------------------------------------------
+
+1. PRESET (Dropdown)
+Selects the core instruction set from your `prompts.txt` database. 
+- General Use: Captures the entire image exactly as-is.
+- Character Dataset: Masks character physical traits (for character LoRAs).
+- Object Dataset: Masks object appearance (for object/prop LoRAs).
+- Clothing Item Dataset: Masks specific garments but describes the wearer.
+- Character and Clothing: Masks character traits but strictly describes their outfits (for flexible character LoRAs).
+
+2. TRIGGER_WORD (String)
+The specific token you want to train your LoRA on. This replaces the 
+***trigger_word*** placeholder in the prompt. 
+
+*GENDER TAGGING FEATURE:*
+You can explicitly tell the LLM which pronouns to use by appending the gender 
+in parentheses at the end of your trigger word. 
+- Format: your_word(gender)
+- Valid Options: (male), (female), (it)
+- Examples: 
+    - `chr_bob(male)` -> Outputs: "chr_bob... male (use he/him/his pronouns)"
+    - `magic_sword(it)` -> Outputs: "magic_sword... an object (use it/its pronouns)"
+    - `chr_alice` -> (No tag defaults to unspecified/context-appropriate)
+Note: Only the base name ("chr_bob") will be used in the actual caption.
+
+3. STYLE_FOCUS (Boolean Toggle)
+- OFF (False): Standard medium identification (Photo vs. Artwork).
+- ON (True): Injects advanced, highly-detailed instructions forcing the LLM to 
+  analyze specific camera aesthetics (lighting, depth of field, film grain) or 
+  artistic rendering techniques (brushwork, media utilization). 
+
+4. MANUAL_APPEND (Multiline Text)
+Use this box to type any custom, one-off instructions for a specific generation.
+Whatever you type here will be automatically added to the very bottom of the 
+selected preset. 
+- Example: "Focus heavily on describing the character's hand gestures."
+
+--------------------------------------------------------------------------------
+NODE OUTPUTS
+--------------------------------------------------------------------------------
+
+- PROMPT_TEXT (String): The final, compiled prompt. Connect this directly to the 
+  text/instruction input of your LLM generation node.
+
+--------------------------------------------------------------------------------
+HOW TO CUSTOMIZE PRESETS (Advanced)
+--------------------------------------------------------------------------------
+
+You can edit, add, or rewrite the instructions by opening the `prompts.txt` 
+file located in the ComfyUI-handyTools folder.
+
+Formatting Rules for prompts.txt:
+1. Preset Names: Must be enclosed in brackets (e.g., [My Custom Preset]).
+2. Trigger Word Placement: Use `***trigger_word***` wherever you want the 
+   user's input to appear.
+3. Gender Placement: Use `&gender&` where you want the pronoun rules injected.
+4. Style Focus Overrides: 
+   - Standard rules must begin with `##` (e.g., `##1. Rule text...`)
+   - The expanded "Style Focus" version of that rule must be placed at the very 
+     bottom of the preset block and begin with `*##` (e.g., `*##1. Expanded text...`).
+   - When Style Focus is turned ON, the node automatically swaps the `##` line 
+     for the `*##` line.
+
+================================================================================

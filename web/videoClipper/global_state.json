@@ -1,0 +1,14 @@
+{
+    "recentProjects": [],
+    "autoLoadProject": true,
+    "appSettings": {
+        "hwEncoder": "h264_nvenc",
+        "proxyThresholdMb": 250,
+        "webpFrames": 12,
+        "webpThresholdSec": 30,
+        "webpSampleFull": true,
+        "autoProxy": false,
+        "exportEncoder": "h264",
+        "exportCrf": 17
+    }
+}
