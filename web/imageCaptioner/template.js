@@ -542,6 +542,7 @@ export function getCaptionerHTML() {
                                         <option value="Clothing Item Dataset">Clothing Item Dataset</option>
                                         <option value="General Use">General Use</option>
                                         <option value="Object Dataset">Object Dataset</option>
+                                        <option value="Tagging">Tagging</option>
                                     </select>
                                 </div>
                                 
